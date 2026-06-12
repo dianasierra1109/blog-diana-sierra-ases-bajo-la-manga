@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diana Sierra / Blog</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+
+  <header class="hero">
+    <div class="hero-grid">
+      <div class="hero-photo-col">
+        <div class="credential-card">
+          <div class="credential-photo">
+            <img src="./assets/foto.jpg" alt="Diana Sierra">
+          </div>
+          <div class="credential-info">
+            <p class="credential-name">Diana Sierra</p>
+            <p class="credential-ci">CI 30.730.461</p>
+          </div>
+        </div>
+      </div>
+      <div class="hero-text-col">
+        <p class="kicker">BLOG • SISTEMAS OPERATIVOS • LINUX</p>
+        <h1>Terminal Playground: 10 comandos Linux que te suben de nivel</h1>
+        <p class="subtitle">
+          Un enfoque cool, directo y útil para dominar consola como Ingeniera/o en Informática.
+          Misma recomendación base: <strong>MX Linux + XFCE</strong>.
+          <br>
+          <strong class="uc-title">Mis Ases bajo la manga</strong>
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#comandos">Ir a comandos</a>
+          <a href="./assets/Informe-Diana-Sierra-Mis-Ases-Bajo-la-manga.pdf" target="_blank" class="btn btn-ghost">Ver
+            Informe</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>¿Por qué MX Linux con XFCE ahora es parte de mi stack para desarrollo?</h2>
+      <div class="distro-grid">
+        <article>
+          <h3>Rinde de verdad</h3>
+          <p>XFCE es liviano, rápido y estable para compilar, levantar servicios y estudiar sin lag.</p>
+        </article>
+        <article>
+          <h3>Base Debian = paz mental</h3>
+          <p>Repos maduros, documentación enorme y soluciones probadas para casi cualquier escenario.</p>
+        </article>
+        <article>
+          <h3>Ideal para crecer</h3>
+          <p>Comienza fácil, pero te deja escalar a automatización, redes, scripting y administración real.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel control-panel">
+      <h2>Modo práctica</h2>
+      <p>Filtra por tipo, busca por palabra y descubre un comando aleatorio para practicar.</p>
+      <div class="controls">
+        <input id="searchInput" type="text" placeholder="Buscar comando o utilidad...">
+        <button id="randomBtn" class="btn btn-primary" type="button">Elegir al Azar</button>
+      </div>
+      <div class="filters">
+        <p class="title-filters">Etiquetas: </p>
+        <button class="filter-btn active" data-filter="all" type="button">Todos</button>
+        <button class="filter-btn" data-filter="fundamentos" type="button">Fundamentos</button>
+        <button class="filter-btn" data-filter="productividad" type="button">Productividad</button>
+        <button class="filter-btn" data-filter="diagnostico" type="button">Diagnóstico</button>
+        <button class="filter-btn" data-filter="red" type="button">Red</button>
+        <button class="filter-btn" data-filter="archivos" type="button">Archivos</button>
+        <button class="filter-btn" data-filter="automatizacion" type="button">Automatización</button>
+      </div>
+      <p id="resultsInfo" class="results-info"></p>
+    </section>
+
+    <section id="comandos" class="commands">
+      <article class="command-card" data-category="fundamentos" data-keywords="manual ayuda documentación man">
+        <div class="card-top">
+          <span class="tag">Fundamentos</span>
+          <span class="index">01</span>
+        </div>
+        <h3>Manual instantáneo</h3>
+        <pre><code>man systemctl</code></pre>
+        <p><strong>Utilidad:</strong> te enseña opciones, sintaxis y ejemplos oficiales sin salir de terminal.</p>
+        <button class="copy-btn" data-command="man systemctl" type="button">Copiar</button>
+      </article>
+
+      <article class="command-card" data-category="productividad" data-keywords="historial comandos productividad">
+        <div class="card-top">
+          <span class="tag">Productividad</span>
+          <span class="index">02</span>
+        </div>
+        <h3>Historial inteligente</h3>
+        <pre><code>history | tail -n 25</code></pre>
+        <p><strong>Utilidad:</strong> revisa tus últimos pasos para repetir soluciones o documentar procesos.</p>
+        <button class="copy-btn" data-command="history | tail -n 25" type="button">Copiar</button>
+      </article>
+
+      <article class="command-card" data-category="productividad" data-keywords="alias atajos shell rapidez">
+        <div class="card-top">
+          <span class="tag">Productividad</span>
+          <span class="index">03</span>
+        </div>
+        <h3>Atajos personalizados</h3>
+        <pre><code>alias gs='git status'</code></pre>
+        <p><strong>Utilidad:</strong> ahorra tecleo y acelera flujos repetitivos de desarrollo.</p>
+        <button class="copy-btn" data-command="alias gs='git status'" type="button">Copiar</button>
+      </article>
+
+      <article class="command-card" data-category="diagnostico" data-keywords="disco almacenamiento espacio">
+        <div class="card-top">
+          <span class="tag">Diagnóstico</span>
+          <span class="index">04</span>
+        </div>
+        <h3>Salud del disco</h3>
+        <pre><code>df -h</code></pre>
+        <p><strong>Utilidad:</strong> detecta particiones al límite antes de que un servicio falle por falta de espacio.
+        </p>
+        <button class="copy-btn" data-command="df -h" type="button">Copiar</button>
+      </article>
+
+      <article class="command-card" data-category="diagnostico" data-keywords="peso carpetas uso disco">
+        <div class="card-top">
+          <span class="tag">Diagnóstico</span>
+          <span class="index">05</span>
+        </div>
+        <h3>¿Qué carpeta pesa más?</h3>
+        <pre><code>du -sh * | sort -h</code></pre>
+        <p><strong>Utilidad:</strong> ubica rápido directorios "tragones" para limpiar o reubicar datos.</p>
+        <button class="copy-btn" data-command="du -sh * | sort -h" type="button">Copiar</button>
+      </article>
+
+      <article class="command-card" data-category="diagnostico" data-keywords="ram memoria rendimiento">
+        <div class="card-top">
+          <span class="tag">Diagnóstico</span>
+          <span class="index">06</span>
+        </div>
+        <h3>Estado de memoria RAM</h3>
+        <pre><code>free -h</code></pre>
+        <p><strong>Utilidad:</strong> verifica consumo de RAM y swap para anticipar cuellos de botella.</p>
+        <button class="copy-btn" data-command="free -h" type="button">Copiar</button>
+      </article>
+
+      <article class="command-card" data-category="diagnostico" data-keywords="procesos cpu monitoreo">
+        <div class="card-top">
+          <span class="tag">Diagnóstico</span>
+          <span class="index">07</span>
+        </div>
+        <h3>Top procesos por CPU</h3>
+        <pre><code>ps aux --sort=-%cpu | head -n 10</code></pre>
+        <p><strong>Utilidad:</strong> identifica procesos que están consumiendo CPU de forma excesiva.</p>
+        <button class="copy-btn" data-command="ps aux --sort=-%cpu | head -n 10" type="button">Copiar</button>
+      </article>
+
+      <article class="command-card" data-category="red" data-keywords="http headers web api curl">
+        <div class="card-top">
+          <span class="tag">Red</span>
+          <span class="index">08</span>
+        </div>
+        <h3>Inspección HTTP rápida</h3>
+        <pre><code>curl -I https://tusitio.com</code></pre>
+        <p><strong>Utilidad:</strong> valida cabeceras, estado y conectividad de APIs o sitios sin navegador.</p>
+        <button class="copy-btn" data-command="curl -I https://tusitio.com" type="button">Copiar</button>
+      </article>
+
+      <article class="command-card" data-category="archivos" data-keywords="backup compresión tar">
+        <div class="card-top">
+          <span class="tag">Archivos</span>
+          <span class="index">09</span>
+        </div>
+        <h3>Respaldo comprimido</h3>
+        <pre><code>tar -czvf respaldo.tar.gz proyecto/</code></pre>
+        <p><strong>Utilidad:</strong> empaqueta entregables, snapshots o backups en un solo archivo comprimido.</p>
+        <button class="copy-btn" data-command="tar -czvf respaldo.tar.gz proyecto/" type="button">Copiar</button>
+      </article>
+
+      <article class="command-card" data-category="automatizacion"
+        data-keywords="tareas programadas cron automatización">
+        <div class="card-top">
+          <span class="tag">Automatización</span>
+          <span class="index">10</span>
+        </div>
+        <h3>Agenda tareas automáticas</h3>
+        <pre><code>crontab -e</code></pre>
+        <p><strong>Utilidad:</strong> programa scripts para backups, limpiezas y reportes sin intervención manual.</p>
+        <button class="copy-btn" data-command="crontab -e" type="button">Copiar</button>
+      </article>
+    </section>
+
+    <section class="panel mini-guide">
+      <h2>Mini ruta ganadora (5 días)</h2>
+      <ol>
+        <li><strong>Día 1:</strong> domina <code>man</code> + <code>history</code>.</li>
+        <li><strong>Día 2:</strong> crea 3 alias que uses a diario.</li>
+        <li><strong>Día 3:</strong> practica diagnóstico con <code>df</code>, <code>du</code>, <code>free</code> y
+          <code>ps</code>.
+        </li>
+        <li><strong>Día 4:</strong> prueba comandos de red y compresión.</li>
+        <li><strong>Día 5:</strong> automatiza una tarea real con <code>crontab</code>.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <p>La terminal se vuelve divertida cuando cada comando te ahorra tiempo real.</p>
+    <p>Actividad elaborada por Diana Sierra - CI 30730461</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
